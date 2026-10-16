@@ -1,0 +1,151 @@
+/*edicion universal de la  página*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*color y tamaño del header*/
+header
+{
+    background-color: #005FA3;
+    padding: 5px;
+}
+/*diseño de toda la barra de navegación*/
+nav
+{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 280px;
+    padding: 15px;
+}
+/*diseño de las distintas palabras de la barra de navegación*/
+.barra
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+/*diseño de los enlaces dentro de la barra de navegación*/
+a
+{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-style: bold;
+    padding: 10px;
+}
+/*diseño del logo de la barra de navegación*/
+.logo
+{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    margin-left: 100px;
+}
+/*diseño de la etiqueta div que contiene las distintas secciones de la barra de navegación*/
+.opciones
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 2;
+}
+/*Imagen de del inicio*/
+main
+{
+    background-image: url(Imagenes/Foto\ portada.jpg);
+    min-height: 100vh;
+    background-size: cover;
+}
+/*edicion de la etiqueta section*/
+.hero
+{
+    position: relative;
+    min-height: 380px;
+    padding: 28px;
+    color: white;
+    font-family: Georgia, serif;
+    font-weight: bold;
+}
+/*edicion de la etiqueta h1 dentro del section*/
+.hero h1 
+{
+    margin: 0;
+    text-align: center;
+    font-size: 40px;
+    line-height: 1.6;
+}
+/*edicion de la etiqueta p dentro del section*/
+.hero p 
+{
+    position: absolute;
+    margin-left: 10%;
+    bottom: -170px; 
+    font-size: 25px;
+    line-height: 1.55;
+}
+/*Diseño del footer*/
+footer
+{
+    background-color: #005FA3;
+    padding: 40px; 
+}
+/*Diseño del div de las características del restaurante footer*/
+.detalles
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+/*Diseño de la lista de las características del footer*/
+.pie
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: -80px;
+    color: #ffffff;
+}
+/*Diseño del div de las redes sociales*/
+.redes
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: right;
+    align-items:flex-end;
+}
+/*Diseño de la lista de las redes sociales*/
+.sociales
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -165px;
+    color: #ffffff;
+    margin-right: 150px;
+}
+/*Color de los íconos del footer*/
+i
+{
+    color: #ffffff;
+}
