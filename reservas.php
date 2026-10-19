@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Toscana</title>
+    <title>Reservas</title>
     <!--Conexión con el archivo .CSS-->
     <link rel="stylesheet" href="reservas.css">
     <!--Conexión con la página de íconos-->
@@ -32,24 +32,29 @@
     </header>
     <!--Formulario de reservas del restaurante-->
     <main>
-        <form class="reserva" action="" method="$_POST">
+        <form class="reserva" action="" method="POST">
             <!--Título del formulario-->
             <h2>Reservá Tu Mesa</h2>
             <!--Elementos del formulario-->
             <label for="nombre"></label>
-            <input  type="text" id="nombre" placeholder="Nombre y apellido" required>
+            <input  type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
             <br>
             <label for="email"></label>
-            <input type="email" id="email" placeholder="afafaf@gmail.com" required>
+            <input type="email" id="email" name="email" placeholder="afafaf@gmail.com" required>
             <br>
-            <label for="WhatsApp"></label>
-            <input type="tel" id="WhatsApp" placeholder="WhatsApp" required>
+            <div class="numero">
+                <label for="codigo_area"></label>
+                <input type="tel" id="codigo_area" name="codigo_area" placeholder="261" pattern="[0-9]{1,3}" maxlength="3" required>
+                <span>-</span>
+                <label for="whatsapp"></label>
+                <input type="tel" id="whatsapp" name="whatsapp" placeholder="1234567" pattern="[0-9]{1,7}" maxlength="7" required>
+            </div>
             <br>
             <label for="fecha"></label>
-            <input type="date" id="fecha" placeholder="Fecha" required>
+            <input type="date" id="fecha" name="fecha" placeholder="Fecha" required>
             <br>
             <select name="horas" required>
-                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="" disabled selected>Selecciona una hora...</option>
                 <option value="12:00">12:00</option>
                 <option value="12:30">12:30</option>
                 <option value="13:00">13:00</option>
@@ -61,7 +66,7 @@
             </select>
             <br>
             <label for="personas"></label>
-            <input type="number" id="personas" placeholder="Personas" required>
+            <input type="number" min="1" id="personas" name="personas" placeholder="Personas" required>
             <br>
             <!--Botón de envío-->
             <button type="submit">Reservar</button>
@@ -109,7 +114,12 @@
                     <i class="fa-brands fa-facebook"></i> Facebook
                     </a>
                 </li>
-                <i class="fa-solid fa-lock"></i>
+                <li>
+                    <a href="administrador/inicio_sesion.php">
+                        <i class="fa-solid fa-lock"></i>
+                    </a>
+                </li>
+            </ul>
     </footer>
 </body> 
 </html>
