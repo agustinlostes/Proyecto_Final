@@ -84,7 +84,12 @@
                     <i class="fa-brands fa-facebook"></i> Facebook
                     </a>
                 </li>
-                <i class="fa-solid fa-lock"></i>
+                <li>
+                    <a href="administrador/inicio_sesion.php">
+                        <i class="fa-solid fa-lock"></i>
+                    </a>
+                </li>
+            </ul>
     </footer>
 </body> 
 </html>
