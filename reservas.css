@@ -214,3 +214,17 @@ body
 {
     background-color: #005487;
 }
+/*Diseño del div dentro del formulario el cual contiene el codigo del teléfono y el número de teléfono*/
+.numero
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+/*Establece el tamaño al primer input que aparece dentro del div*/
+.numero input:first-of-type
+{
+    width: 55px;
+}
