@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Toscana</title>
+    <title>Contacto</title>
     <!--Conexión con el archivo .CSS-->
     <link rel="stylesheet" href="contacto.css">
     <!--Conexión con la página de íconos-->
@@ -88,7 +88,12 @@
                     <i class="fa-brands fa-facebook"></i> Facebook
                     </a>
                 </li>
-                <i class="fa-solid fa-lock"></i>
+                <li>
+                    <a href="administrador/inicio_sesion.php">
+                        <i class="fa-solid fa-lock"></i>
+                    </a>
+                </li>
+            </ul>
     </footer>
 </body> 
 </html>
