@@ -1,9 +1,18 @@
+<?php
+/*protege el panel del administrador para que solo pueda verla un administrador que inició sesión 
+comprobando que exista la variable que se guarda cuando el inición de sesión es correcto*/
+session_start();
+if (!isset($_SESSION["administrador_id"])){ 
+    header("Location: inicio_sesion.php"); 
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Opciones Administrador</title>
     <!--Conexión con el archivo .CSS-->
     <link rel="stylesheet" href="opciones_admin.css">
     <!--Conexión con la página de íconos-->
@@ -22,12 +31,18 @@
     </header>
     <main>
         <div class="opciones">
+            <!--Título del panel del administrador-->
             <h2>🍝Panel del Administrador</h2>
+            <!--Opciones que el administrador puede elegir para poder ver las reservas o los platos y realizar 
+            distintas tareas-->
             <ul class="admin">
                 <li class="ver"> <a href="ver_reservas.php">Ver Reservas</a></li>
                 <li class="ver"><a href="ver_platos.php">Ver Platos</a></li>
             </ul>
-            <button type="button" class="cerrar_sesion"><a href="cerrar_sesion.php">Cerrar Sesión</a></button>
+            <!--botón de cierre de sesión-->
+            <button type="button" class="cerrar_sesion">
+                <a href="cerrar_sesion.php">Cerrar Sesión</a>
+            </button>
         </div>
     </main>
     <!--Pie de página-->
