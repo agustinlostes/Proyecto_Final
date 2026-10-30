@@ -32,7 +32,7 @@ main
     width: 100%;
     text-align: center;
     border: 2px solid #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin-top: 15px;
 }
 /*Diseño de los encabezados de la tabla donde se encuentran los títulos*/
@@ -49,6 +49,7 @@ main
 {
     padding: 15px;  
     border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
     font-size: 18px;
     font-weight: normal;
 }
@@ -73,7 +74,7 @@ main
     font-size: 35px;
     font-style: bold;
 }
-/*Diseño del checkbox dentro de la tabla para poder marcar que reserva se quiere modificar o eliminar*/
+/*Diseño del radio dentro de la tabla para poder marcar que reserva se quiere modificar o eliminar*/
 .reservas input
 {
     height: 20px;
@@ -206,4 +207,119 @@ a
     font-size: 25px;
     font-style: bold;
     padding: 10px;
+}
+
+/* Ajustes para tablets */
+@media screen and (max-width: 768px)
+{
+    header
+    {
+        padding: 15px;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tabla
+    {
+        overflow-x: auto;
+        padding: 55px 20px 25px;
+        border-radius: 30px;
+    }
+
+    .tabla h2
+    {
+        margin: -35px 0 15px;
+        font-size: 30px;
+    }
+
+    .reservas
+    {
+        min-width: 700px;
+    }
+
+    .reservas th,
+    .reservas td
+    {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .acciones
+    {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .modificar,
+    .eliminar,
+    .panel,
+    .cantidad
+    {
+        margin: 20px 5px 0;
+    }
+}
+
+/* Ajustes para celulares */
+@media screen and (max-width: 480px)
+{
+    .tabla
+    {
+        margin: 10px 5px;
+        padding: 45px 10px 20px;
+    }
+
+    .tabla h2
+    {
+        margin: -30px 0 12px;
+        font-size: 25px;
+    }
+
+    .reservas
+    {
+        min-width: 650px;
+    }
+
+    .acciones
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modificar,
+    .eliminar,
+    .panel,
+    .cantidad
+    {
+        width: 100%;
+        max-width: 260px;
+        margin: 10px auto 0;
+    }
+
+    footer
+    {
+        padding: 25px 12px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
 }
