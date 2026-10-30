@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador</title>
+    <title>Inicio Sesión</title>
     <!--Conexión con el archivo .CSS-->
     <link rel="stylesheet" href="sesion.css">
     <!--Conexión con la página de íconos-->
@@ -30,26 +30,39 @@
             </div>
         </nav>
     </header>
-    <!--Formulario de inicio de sesión-->
     <main>
-        <form class="sesion" action="" method="POST">
+        <!--Lee el error de la URL; si no existe, usa un texto vacío-->
+        <?php
+            $error = $_GET['error'] ?? ''; 
+        ?>
+            <!--Formulario de inicio de sesión el cual envia los datos a procesar_login.php para poder 
+            procesar los datos ingresados-->
+        <form class="sesion" action="procesar_login.php" method="POST">
+            
+            <!-- Comprueba si la URL indica que los datos eran incorrectos verificando que el error obtenido
+            corresponda a las credenciales-->
+            <?php if ($error === 'credenciales'): ?> 
+                <p class="mensaje-error">Usuario o contraseña incorrectos</p>
+            <?php endif; ?> 
+
             <!--Título del formulario-->
-            <h2>Panel del administrador</h2>
+            <h2>🍝Panel del administrador</h2>
+            
             <!--Elementos del formulario-->
             <div class="campo">
             <i class="fa-solid fa-user"></i>
             <label for="nombre"></label>
-            <input  type="text" id="nombre" placeholder="Nombre de Usuario" required>
+            <input  type="text" id="nombre" name="nombre_usuario" placeholder="Nombre de Usuario" required>
             </div>
             <br>
             <div class="campo">
             <i class="fa-solid fa-lock"></i>
-            <label for="contraseña"></label>
-            <input type="password" id="contraseña" placeholder="Contraseña" required>
+            <label for="contrasena"></label>
+            <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
             </div>
             <br>
-            <!--Botón de envío-->
-            <button type="submit"><a href="opciones_admin.php"></a>Iniciar Sesión</button>
+            <!--Botón de inicio de sesión-->
+            <button type="submit">Iniciar Sesión</button>
         </form>
     </main>
     <!--Pie de página-->
