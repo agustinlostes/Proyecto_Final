@@ -64,8 +64,7 @@ a
 main
 {
     background-image: url(Imagenes/Foto\ Menú.jpg);
-    min-height: 250px;
-    background-size: cover;
+    background-size: 100% auto;
 }
 /*edicion de la etiqueta section*/
 .hero
@@ -148,7 +147,7 @@ i
 {
     color: #ffffff;
 }
-/*Diseño del div de los distintos platos*/
+/*Diseño del nav el cual contiene las distintas anclas de las categorias de los distintos platos*/
 .menu
 {
     height: 100%;
@@ -161,7 +160,7 @@ i
     padding: 15px;
     background-color: #DFD4B9;
 }
-/*Diseño de la lista de los distintos platos*/
+/*Diseño de la lista de las distintas categorias de los distintos platos*/
 .carta
 {
     list-style: none;
@@ -171,9 +170,9 @@ i
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
-    margin-left: 270px;
+    margin-left: 300px;
 }
-/*Diseño de cada plato*/
+/*Diseño de cada categoría de plato*/
 .platos
 {
     text-decoration: none;
@@ -183,4 +182,198 @@ i
     padding: 10px;
     background-color: #005FA3;
     border-radius: 39px;
+}
+/*Diseño del menú del restaurante que incluye los platos y los precios de cada uno*/
+.seccion-menu {
+    width: 100%;
+    padding: 25px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: #e3d8bb;
+    color: black;
+}
+/*Diseño de los títulos de cada categoría*/
+.seccion-menu h2 {
+    margin-top: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+}
+/*Diseño de la lista que incluye los platos del restaurante*/
+.lista-platos {
+    width: 100%;
+    margin-top: 15px;
+}
+/*Diseño de los platos con sus precios*/
+.plato {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding-top: 10px;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 14px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    line-height: 1.4;
+}
+/*Diseño de los precios de cada plato*/
+.precio-plato {
+    text-align: right;
+    white-space: nowrap;
+}
+
+/* RESPONSIVE: AJUSTES DEL MENÚ EN CELULARES (hasta 768px) */
+@media screen and (max-width: 768px)
+{
+    nav
+    {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opciones
+    {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .barra
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Los enlaces de la barra y las categorías no deben quedar en 25px */
+    .barra a
+    {
+        font-size: 18px;
+    }
+
+    .platos a
+    {
+        font-size: 18px;
+    }
+
+    .hero h1
+    {
+        font-size: 30px;
+    }
+
+    .hero p
+    {
+        font-size: 19px;
+    }
+
+    /* La sección deja de ser fila para que el título y los platos ocupen todo el ancho */
+    .seccion-menu
+    {
+        display: block;
+        padding: 25px 16px;
+    }
+
+    .carta
+    {
+        justify-content: center;
+        gap: 15px;
+        margin-left: 0;
+    }
+
+    .menu
+    {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    footer
+    {
+        padding: 30px 15px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
+}
+
+/* RESPONSIVE: CELULARES CHICOS (hasta 480px) */
+@media screen and (max-width: 480px)
+{
+    .barra
+    {
+        gap: 8px;
+    }
+
+    .menu
+    {
+        padding: 12px;
+    }
+
+    .carta
+    {
+        gap: 8px;
+    }
+
+    .barra a
+    {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    footer
+    {
+        padding: 25px 12px;
+    }
+
+    .hero h1
+    {
+        font-size: 26px;
+    }
+
+    .platos a
+    {
+        font-size: 16px;
+    }
+
+    .seccion-menu h2
+    {
+        font-size: 24px;
+    }
+
+    .plato
+    {
+        font-size: 17px;
+    }
+
+    .hero
+    {
+        padding: 24px 12px;
+    }
 }

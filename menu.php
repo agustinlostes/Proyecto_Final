@@ -1,3 +1,43 @@
+<?php
+// Incluye el archivo que crea la conexión mysqli.
+require_once "Backend/conexion.php";
+
+// Lista de las categorías y el nombre para cada ancla.
+$categorias = [
+    "Carnes" => "carnes",
+    "Pastas" => "pastas",
+    "Pizzas" => "pizzas",
+    "Postres" => "postres",
+    "Bebidas" => "bebidas",
+    "Vinos" => "vinos"
+];
+
+// Lista para guardar los platos separados por categoría.
+$platosPorCategoria = [];
+/*Recorre el arreglo "categorias" y asigna los platos a la variable "categoria" y luego genera la lista vacía 
+donde se van a cargar los platos*/
+foreach ($categorias as $categoria => $ancla) {
+    $platosPorCategoria[$categoria] = [];
+
+    // Busca en la tabla menu los platos de la categoría elegida.
+$sql = "SELECT nombre, categoria, precio
+            FROM menu
+            WHERE categoria = ?
+            ORDER BY ID";
+/*Se prepara la consulta SQL, se le asigna un valor al signo de preguntas que corresponde a la categoría del plato
+y el tipo de dato, se ejecuta al consulta y se obtiene el resultado*/
+    $consulta = $conexion->prepare($sql);
+    $consulta->bind_param("s", $categoria);
+    $consulta->execute();
+    $resultado = $consulta->get_result();
+
+    // Guarda cada plato encontrado en la lista de su categoría.
+    while ($plato = $resultado->fetch_assoc()) {
+        $platosPorCategoria[$categoria][] = $plato;
+    }
+    $consulta->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -36,18 +76,53 @@
             <h1>Restaurante<br>La carta de una historia compartida</h1>
             <p>Carnes, Pastas, Pizzas, Postres y Bebidas para acompañar tu mesa</p>
         </section>
-        <!--Secciones del menú-->
-        <div class="menu">
-            <ul class="carta">
-                <li class="platos"><a href="#">Carnes</a></li>
-                <li class="platos"><a href="#">Pastas</a></li>
-                <li class="platos"><a href="#">Pizzas</a></li>
-                <li class="platos"><a href="#">Postres</a></li>
-                <li class="platos"><a href="#">Bebidas</a></li>
-                <li class="platos"><a href="#">Vinos</a></li>
-            </ul>
-        </div>
+        <!-- Se crea el enlace del ancla para recorrer el menú-->
+    <nav class="menu">
+        <ul class="carta">
+            <?php foreach ($categorias as $categoria => $ancla): ?>
+                <li class="platos">		
+                    <a href="#<?= htmlspecialchars($ancla) ?>">
+                        <?= htmlspecialchars($categoria) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </nav>
+        <!--Recibe el ID del ancla luego de hacer click sobre la categoría-->
+    <?php foreach ($categorias as $categoria => $ancla): ?>
+    <section class="seccion-menu" id="<?= htmlspecialchars($ancla) ?>">
+
+        <!--Permite escribir el título de cada categoría-->
+        <h2>Nuestras <?= htmlspecialchars($categoria) ?></h2>
+
+        <!--Verifica si hay más de un plato por cada categoría y si hay ejecuta la siguiente línea-->
+        <?php if (count($platosPorCategoria[$categoria]) > 0): ?>
+            <div class="lista-platos">
+
+                <!--Recorre los platos de cada categoría y los asigna a la variable "plato"-->
+                <?php foreach ($platosPorCategoria[$categoria] as $plato): ?>
+                    <article class="plato">
+                        <span class="nombre-plato">
+                            <?= htmlspecialchars($plato["nombre"]) ?>
+                        </span>
+
+                        <!--Muestra el número con formato de precio, sin mostrar decimales y usando el punto 
+                        para los miles-->
+                        <span class="precio-plato">
+                            $<?= number_format((float)$plato["precio"], 0, ",", ".") ?>
+                        </span>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+
+            <!--En caso que no haya ningún plato en la categoría muestra este mensaje-->
+        <?php else: ?>
+            <p>Próximamente agregaremos platos a esta categoría.</p>
+        <?php endif; ?>
+    </section>
+        <?php endforeach; ?>
     </main>
+    
     <!--Pie de página-->
     <footer>
         <!--Logo del restaurante-->
