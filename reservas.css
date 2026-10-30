@@ -226,5 +226,153 @@ body
 /*Establece el tamaño al primer input que aparece dentro del div*/
 .numero input:first-of-type
 {
-    width: 55px;
+    width: 70px;
+}
+/*Diseño del mensaje la reserva se realizó correctamente luego de enviar la reserva*/
+.mensaje
+{
+    font-size: 25px;
+    font-weight: 900;
+    margin-left: 15px;
+    margin-top: 15px;
+    color: green;
+}
+
+/* RESPONSIVE: TABLETS Y CELULARES */
+@media screen and (max-width: 768px)
+{
+    /* Barra de navegación */
+    nav
+    {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        padding: 15px;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opciones
+    {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .barra
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .barra a
+    {
+        font-size: 18px;
+    }
+
+    /* Formulario */
+    .reserva
+    {
+        width: min(100% - 30px, 440px);
+        margin: 25px auto;
+        padding: 20px;
+    }
+
+    .reserva h2
+    {
+        font-size: 25px;
+    }
+
+    .reserva input,
+    .reserva select,
+    .reserva button
+    {
+        font-size: 17px;
+    }
+
+    /* Número de teléfono */
+    .numero
+    {
+        gap: 8px;
+    }
+
+    /* Mensaje de confirmación */
+    .mensaje
+    {
+        font-size: 20px;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    /* Footer */
+    footer
+    {
+        padding: 30px 15px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 25px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+        align-items: center;
+    }
+}
+
+/* Ajustes para celulares pequeños */
+@media screen and (max-width: 480px)
+{
+    .barra
+    {
+        gap: 8px;
+    }
+
+    .barra a
+    {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .reserva
+    {
+        width: calc(100% - 24px);
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .reserva h2
+    {
+        font-size: 22px;
+    }
+
+    .reserva input,
+    .reserva select,
+    .reserva button
+    {
+        font-size: 16px;
+    }
+
+    .numero input:first-of-type
+    {
+        width: 65px;
+    }
 }

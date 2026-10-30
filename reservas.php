@@ -1,3 +1,45 @@
+<?php
+// Incluye el archivo que crea la conexión mysqli.
+require_once "Backend/conexion.php";
+
+$mensaje = "";
+//Comprueba si se recibió el formulario mediante método POST y asigna los valores a las distintas variables
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $cliente = trim($_POST["nombre"]);
+    $email = trim($_POST["email"]);
+    $codigoArea = trim($_POST["codigo_area"]);
+    $numeroWhatsapp = trim($_POST["whatsapp"]);
+    // Genera una única fila para el teléfono juntando el número y el código de área
+    $whatsapp = $codigoArea . $numeroWhatsapp;
+    $fecha = $_POST["fecha"];
+    $hora = $_POST["hora"];
+    $personas = (int) $_POST["personas"];
+//Prepara la conexión SQL para insertar los distintos datos en la tabla
+    $consulta = $conexion->prepare(
+        "INSERT INTO reservas (cliente, email, whatsapp, fecha, hora, personas)
+        VALUES (?, ?, ?, ?, ?, ?)"
+    );
+//Asigna los valores a cada signo de pregunta y el tipo de dato a cada variable
+    $consulta->bind_param(
+        "sssssi",
+        $cliente,
+        $email,
+        $whatsapp,
+        $fecha,
+        $hora,
+        $personas
+    );
+/*Si se ejecuta la consulta correctamente muestra un mensaje de éxito sino se ejecuta correctamente muestra un
+que no se pudo realizar la reserva*/ 
+    if ($consulta->execute()) {
+        $mensaje = "¡Reserva realizada correctamente!";
+    } else {
+        $mensaje = "No se pudo guardar la reserva.";
+    }
+
+    $consulta->close();
+}
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -32,28 +74,37 @@
     </header>
     <!--Formulario de reservas del restaurante-->
     <main>
-        <form class="reserva" action="" method="POST">
+        <form class="reserva" action="reservas.php" method="POST">
             <!--Título del formulario-->
             <h2>Reservá Tu Mesa</h2>
+            <!--Si se ejecuta la consulta correctamente muestra un mensaje de éxito sino se ejecuta correctamente muestra un
+            que no se pudo realizar la reserva-->
+            <?php if ($mensaje !== ""): ?>
+                <p class="mensaje"><?php echo htmlspecialchars($mensaje); ?></p>
+            <?php endif; ?>
             <!--Elementos del formulario-->
+            <!--Nombre y apellido de la persona-->
             <label for="nombre"></label>
             <input  type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
             <br>
+            <!--Email de la persona-->
             <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="afafaf@gmail.com" required>
             <br>
+            <!--Número de teléfono de la persona-->
             <div class="numero">
                 <label for="codigo_area"></label>
-                <input type="tel" id="codigo_area" name="codigo_area" placeholder="261" pattern="[0-9]{1,3}" maxlength="3" required>
-                <span>-</span>
+                <input type="tel" id="codigo_area" name="codigo_area" placeholder="261" pattern="[0-9]{1,4}" maxlength="4" required>
                 <label for="whatsapp"></label>
                 <input type="tel" id="whatsapp" name="whatsapp" placeholder="1234567" pattern="[0-9]{1,7}" maxlength="7" required>
             </div>
             <br>
+            <!--Fecha de reserva-->
             <label for="fecha"></label>
             <input type="date" id="fecha" name="fecha" placeholder="Fecha" required>
             <br>
-            <select name="horas" required>
+            <!--Hora de la reserva-->
+            <select name="hora" required>
                 <option value="" disabled selected>Selecciona una hora...</option>
                 <option value="12:00">12:00</option>
                 <option value="12:30">12:30</option>
@@ -65,8 +116,9 @@
                 <option value="21:30">21:30</option>
             </select>
             <br>
+            <!--Cantidad de personas-->
             <label for="personas"></label>
-            <input type="number" min="1" id="personas" name="personas" placeholder="Personas" required>
+            <input type="number" min="1" max="60" id="personas" name="personas" placeholder="Personas" required>
             <br>
             <!--Botón de envío-->
             <button type="submit">Reservar</button>
