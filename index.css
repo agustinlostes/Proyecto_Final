@@ -22,7 +22,7 @@ nav
     gap: 280px;
     padding: 15px;
 }
-/*diseño de las distintas palabras de la barra de navegación*/
+/*diseño de la lista con las distintas palabras de la barra de navegación*/
 .barra
 {
     list-style: none;
@@ -39,7 +39,6 @@ a
     text-decoration: none;
     color: #ffffff;
     font-size: 25px;
-    font-style: bold;
     padding: 10px;
 }
 /*diseño del logo de la barra de navegación*/
@@ -103,7 +102,6 @@ footer
 /*Diseño del div de las características del restaurante footer*/
 .detalles
 {
-    width: 100%;
     display: flex; 
     flex-direction: column;
     align-items: center;
@@ -124,10 +122,9 @@ footer
 /*Diseño del div de las redes sociales*/
 .redes
 {
-    width: 100%;
     display: flex; 
     flex-direction: column;
-    justify-content: right;
+    justify-content: center;
     align-items:flex-end;
 }
 /*Diseño de la lista de las redes sociales*/
@@ -148,4 +145,181 @@ footer
 i
 {
     color: #ffffff;
+}
+
+/* Adaptación para tablets y celulares */
+@media screen and (max-width: 768px)
+{
+    /*diseño de toda la barra de navegación*/
+    nav
+    {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    /*diseño del logo de la barra de navegación*/
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    /*diseño de la etiqueta div que contiene las distintas secciones de la barra de navegación*/
+    .opciones
+    {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    /**/
+    .barra
+    {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap; /* Permite que se acomoden de costado si entran */
+    }
+
+    /**/
+    a
+    {
+        font-size: 16px; /* Un toque más chico para que entren mejor */
+    }
+
+    /**/
+    main
+    {
+        background-position: center;
+        background-size: cover;
+    }
+
+    /**/
+    .hero
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    /**/
+    .hero h1
+    {
+        font-size: 28px;
+        text-shadow: 2px 2px 4px black; /* Sombra para leer mejor */
+    }
+
+    /**/
+    .hero p
+    {
+        position: static;
+        margin: 20px 0 0 0; /* Chau a los 200px. Ahora usa un margen controlado arriba */
+        font-size: 18px;
+        text-shadow: 2px 2px 4px black; /* Sombra clave para el fondo claro */
+    }
+
+    /**/
+    footer
+    {
+        padding: 30px 15px;
+    }
+
+    /**/
+    .pie
+    {
+        margin-top: 25px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los bloques del footer */
+        text-align: center;
+    }
+    /* Centra los elementos internos del pie de página */
+    .pie div, .pie ul
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /**/
+    .redes
+    {
+        align-items: center;
+    }
+
+    /**/
+    .sociales
+    {
+        margin: 25px 0 10px;
+        align-items: center;
+    }
+}
+
+/* Adaptación para celulares pequeños */
+@media screen and (max-width: 480px)
+{
+    /**/
+    .barra
+    {
+        /* Mantenemos horizontal con wrap en vez de obligar a columna completa */
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    /**/
+    a
+    {
+        font-size: 15px;
+    }
+
+    /**/
+    .hero
+    {
+        padding: 30px 15px;
+    }
+
+    /**/
+    .hero h1
+    {
+        font-size: 24px;
+    }
+
+    /**/
+    .hero p
+    {
+        font-size: 16px;
+    }
+}
+
+/* Ajustes para que el pie de página se acomode en pantallas angostas */
+@media screen and (max-width: 768px)
+{
+    .pie
+    {
+        margin-top: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
 }
