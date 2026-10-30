@@ -60,88 +60,6 @@ a
     align-items: center;
     flex: 2;
 }
-/*edicion de la etiqueta section*/
-.hero
-{
-    position: relative;
-    min-height: 380px;
-    padding: 28px;
-    color: white;
-    font-family: Georgia, serif;
-    font-weight: bold;
-}
-/*edicion de la etiqueta h1 dentro del section*/
-.hero h1 
-{
-    margin: 0;
-    text-align: center;
-    font-size: 40px;
-    line-height: 1.6;
-}
-/*edicion de la etiqueta p dentro del section*/
-.hero p 
-{
-    position: absolute;
-    margin-left: 10%;
-    bottom: -170px; 
-    font-size: 25px;
-    line-height: 1.55;
-}
-/*Diseño del footer*/
-footer
-{
-    background-color: #005FA3;
-    padding: 40px; 
-}
-/*Diseño del div de las características del restaurante footer*/
-.detalles
-{
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-}
-/*Diseño de la lista de las características del footer*/
-.pie
-{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    flex-wrap: wrap;
-    gap: 30px;
-    margin-top: -80px;
-    color: #ffffff;
-}
-/*Diseño del div de las redes sociales*/
-.redes
-{
-    width: 100%;
-    display: flex; 
-    flex-direction: column;
-    justify-content: right;
-    align-items:flex-end;
-}
-/*Diseño de la lista de las redes sociales*/
-.sociales
-{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: -165px;
-    color: #ffffff;
-    margin-right: 150px;
-}
-/*Color de los íconos del footer*/
-i
-{
-    color: #ffffff;
-}
 /*Color de fondo de la página*/
 body
 {
@@ -217,4 +135,199 @@ body
     position: absolute;
     margin-left: -370px;
     color: black;
+}
+/*Muestra el mensaje de error en el inicio de sesión*/
+.mensaje-error {
+    color: #b00020;
+    text-align: center;
+    margin-bottom: 12px;
+    font-weight: 900;
+}
+/*Diseño del footer*/
+footer
+{
+    background-color: #005FA3;
+    padding: 40px; 
+}
+/*Diseño del div de las características del restaurante footer*/
+.detalles
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+/*Diseño de la lista de las características del footer*/
+.pie
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: -80px;
+    color: #ffffff;
+}
+/*Diseño del div de las redes sociales*/
+.redes
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: right;
+    align-items:flex-end;
+}
+/*Diseño de la lista de las redes sociales*/
+.sociales
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -165px;
+    color: #ffffff;
+    margin-right: 150px;
+}
+/*Color de los íconos del footer*/
+i
+{
+    color: #ffffff;
+}
+
+/* Ajustes para tablets */
+@media screen and (max-width: 768px)
+{
+    nav
+    {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opciones
+    {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .barra
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .barra a
+    {
+        font-size: 18px;
+    }
+
+    .sesion
+    {
+        width: min(100% - 30px, 440px);
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .campo i
+    {
+        margin-left: 0;
+        left: 15px;
+    }
+
+    footer
+    {
+        padding: 30px 15px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
+}
+
+/* Ajustes para celulares */
+@media screen and (max-width: 480px)
+{
+    nav
+    {
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .barra
+    {
+        gap: 8px;
+    }
+
+    .barra a
+    {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    .sesion
+    {
+        width: calc(100% - 24px);
+        margin: 15px auto;
+        padding: 15px;
+    }
+
+    .sesion h2
+    {
+        font-size: 22px;
+    }
+
+    .sesion input,
+    .sesion button
+    {
+        font-size: 16px;
+    }
+
+    .campo
+    {
+        position: relative;
+        margin-top: 25px;
+    }
+
+    .campo i
+    {
+        margin-left: 0;
+        left: 15px;
+    }
+
+    footer
+    {
+        padding: 25px 12px;
+    }
+
+    .pie
+    {
+        gap: 15px;
+    }
 }
