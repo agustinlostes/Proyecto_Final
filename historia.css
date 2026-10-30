@@ -164,3 +164,125 @@ i
 {
     color: #ffffff;
 }
+
+/* RESPONSIVE: TABLETS Y CELULARES */
+@media screen and (max-width: 768px)
+{
+    nav
+    {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .opciones
+    {
+        width: auto;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .barra
+    {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .barra a
+    {
+        font-size: 18px;
+    }
+
+    .historia
+    {
+        flex-direction: column;
+        padding: 25px 15px;
+    }
+
+    .titulo
+    {
+        margin-left: 0;
+        text-align: center;
+    }
+
+    p
+    {
+        margin: 0;
+        padding: 20px 10px;
+    }
+
+    .imagen img
+    {
+        width: 100%;
+        height: auto;
+    }
+
+    footer
+    {
+        padding: 30px 15px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
+}
+
+/* RESPONSIVE: CELULARES CHICOS (hasta 480px) */
+@media screen and (max-width: 480px)
+{
+    .barra
+    {
+        gap: 8px;
+    }
+
+    .barra a
+    {
+        font-size: 15px;
+        padding: 8px;
+    }
+
+    footer
+    {
+        padding: 25px 12px;
+    }
+
+    .titulo
+    {
+        font-size: 26px;
+    }
+
+    p
+    {
+        font-size: 17px;
+        padding: 10px;
+    }
+
+    .imagen
+    {
+        padding: 0 12px 25px;
+    }
+}
