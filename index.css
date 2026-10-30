@@ -220,7 +220,7 @@ i
     .hero p
     {
         position: static;
-        margin: 20px 0 0 0; /* Chau a los 200px. Ahora usa un margen controlado arriba */
+        margin: 20px 0 0 0; 
         font-size: 18px;
         text-shadow: 2px 2px 4px black; /* Sombra clave para el fondo claro */
     }
