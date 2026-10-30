@@ -1,0 +1,410 @@
+/*edicion universal de la  página*/
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*color y tamaño del header*/
+header
+{
+    background-color: #005FA3;
+    padding: 20px;
+}
+/*diseño del logo de la barra de navegación*/
+.logo
+{
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+    margin-left: 100px;
+}
+/*Color principal de la página donde se encuentra la tabla*/
+main
+{
+    background-color: antiquewhite;
+    padding: 5px;
+}
+/*Diseño de la tabla la cual contiene los platos del restaurante*/
+#platos
+{
+    background-color: #005FA3;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    border: 2px solid #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 15px;
+}
+/*Diseño del encabezado de la tabla que contiene los títulos*/
+#platos th
+{
+    padding: 15px;  
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+}
+/*Diseño de las columnas de la tabla que contienen la información*/
+#platos td
+{
+    padding: 15px;  
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    font-size: 18px;
+    font-weight: normal;
+}
+/*Diseño del div el cual contiene toda la estructura de la tabla, de las distintas categorías de platos y
+de las acciones que puede realizar el administrador*/
+.tabla
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    flex-wrap: wrap;
+    background-color: #8bbbd5;
+    padding: 80px;
+    border-radius: 51px;
+}
+/*Diseño del título que se encuentra dentro del div el cual dice Platos del restaurante*/
+.tabla h2
+{
+    margin-top: -70px;
+    margin-left: -50px;
+    color: #F5F5F5;
+    font-size: 35px;
+    font-style: bold;
+}
+/*Diseño del checkbox dentro de la tabla para poder marcar que plato se quiere modificar, eliminar o agregar*/
+#platos input
+{
+    height: 20px;
+    width: 20px;
+}
+/*Diseño del div el cual contiene las distintas tareas que puede realizar el administrador como modificar, 
+eliminar o agregar*/
+.acciones
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 70px;
+}
+/*Diseño de los botones para poder modificar o eliminar un plato*/
+.modificar, .eliminar
+{
+    width: 200px;
+    min-height: 40px;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 18px;
+    border: 1px solid #003f69;
+    background-color: #0068a8;
+    color: white;
+    cursor: pointer;
+    margin-top: 80px;
+    margin-left: -10px;
+}
+/*Diseño de los botones de modificar o eliminar un plato para darle un efecto*/
+.modificar:hover, .eliminar:hover
+{
+    background-color: #005487;
+}
+/*Diseño del botón de volver al panel*/
+.panel
+{
+    width: 200px;
+    min-height: 40px;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 18px;
+    border: 1px solid #003f69;
+    background-color: #0068a8;
+    color: white;
+    cursor: pointer;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+/*Diseño del botón de volver al panel para darle un efecto*/
+.panel:hover
+{
+    background-color: #005487;
+}
+/*Diseño del botón de agregar un nuevo plato al menú*/
+.agregar
+{
+    width: 200px;
+    min-height: 40px;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: 18px;
+    border: 1px solid #003f69;
+    background-color: #0068a8;
+    color: white;
+    cursor: pointer;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+/*Diseño del botón de agregar un plato al menú para darle un efecto*/
+.agregar:hover
+{
+    background-color: #005487;
+}
+/*Diseño del div donde se encuentran las distintas categorías de platos*/
+.menu
+{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+/*Diseño de la lista de las categorías de los distintos platos*/
+.carta
+{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-left: -50px;
+}
+/*Diseño de cada categoría de plato*/
+.platos
+{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-style: bold;
+    padding: 10px;
+    background-color: #005FA3;
+    border-radius: 39px;
+    cursor: pointer;
+}
+/*Diseño de los botones para acceder a las distintas categorías de platos para pasar el cursor por encima y 
+se ponga un efecto*/
+.platos:hover
+{
+    background-color: #003f69;
+}
+/*Diseño del footer*/
+footer
+{
+    background-color: #005FA3;
+    padding: 40px; 
+}
+/*Diseño del div de las características del restaurante footer*/
+.detalles
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+/*Diseño de la lista de las características del footer*/
+.pie
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: -80px;
+    color: #ffffff;
+}
+/*Diseño del div de las redes sociales*/
+.redes
+{
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    justify-content: right;
+    align-items:flex-end;
+}
+/*Diseño de la lista de las redes sociales*/
+.sociales
+{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: -165px;
+    color: #ffffff;
+    margin-right: 150px;
+}
+/*Color de los íconos del footer*/
+i
+{
+    color: #ffffff;
+}
+/*diseño de los enlaces de las redes sociales del footer*/
+a
+{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 25px;
+    font-style: bold;
+    padding: 10px;
+}
+
+/* Ajustes para tablets */
+@media screen and (max-width: 768px)
+{
+    header
+    {
+        padding: 15px;
+    }
+
+    .logo
+    {
+        margin-left: 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .tabla
+    {
+        overflow-x: auto;
+        padding: 55px 20px 25px;
+        border-radius: 30px;
+    }
+
+    .tabla h2
+    {
+        margin: -35px 0 15px;
+        font-size: 30px;
+    }
+
+    #platos
+    {
+        min-width: 600px;
+    }
+
+    #platos th,
+    #platos td
+    {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .acciones
+    {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .modificar,
+    .eliminar,
+    .agregar,
+    .panel
+    {
+        margin: 20px 5px 0;
+    }
+
+    .carta
+    {
+        margin-left: 0;
+        gap: 15px;
+    }
+}
+
+/* Ajustes para celulares */
+@media screen and (max-width: 480px)
+{
+    .tabla
+    {
+        width: auto;
+        max-width: 100%;
+        margin: 10px 5px;
+        padding: 45px 10px 20px;
+    }
+
+    .tabla h2
+    {
+        margin: -30px 0 12px;
+        font-size: 25px;
+    }
+
+    #platos
+    {
+        width: 100%;
+        min-width: 0;
+        table-layout: fixed;
+    }
+
+    #platos th,
+    #platos td
+    {
+        padding: 7px 4px;
+        font-size: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .tabla form
+    {
+        width: 100%;
+    }
+
+    .acciones
+    {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .modificar,
+    .eliminar,
+    .agregar,
+    .panel
+    {
+        width: 100%;
+        max-width: 260px;
+        margin: 10px 0 0;
+    }
+
+    .menu
+    {
+        justify-content: center;
+        padding: 12px;
+    }
+
+    .carta
+    {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    footer
+    {
+        padding: 25px 12px;
+    }
+
+    .pie
+    {
+        margin-top: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .redes
+    {
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .sociales
+    {
+        margin: 0;
+    }
+}
